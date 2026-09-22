@@ -1,0 +1,5 @@
+# API predict_entities(text, labels, threshold, flat_ner, multi_label), ver README.
+gliner2
+# LM / Signature / Predict / context: API moderna desde DSPy 3.0
+dspy>=3.0
+PyYAML

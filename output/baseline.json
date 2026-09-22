@@ -1,0 +1,815 @@
+{
+  "metricas_validation": {
+    "nombre_embargado": 0.717436974789916,
+    "dni": 0.875,
+    "cuit_cuil": 0.4791666666666667,
+    "global": 0.6972601540616247,
+    "latencia_promedio": 14.481681137501255
+  },
+  "schema": {
+    "nombre_embargado": "Nombre completo de la persona física o razón social de la persona jurídica sobre la cual recae directamente la medida judicial de embargo, retención o ejecución mencionada en el fragmento. Extraer el nombre solamente cuando exista evidencia suficiente de que esa persona es el sujeto afectado por la medida. El fragmento puede incluir expresiones como demandado, demandada, embargado, embargada, ejecutado, ejecutada, deudor, deudora, titular de fondos, titular de cuentas o frases equivalentes. No extraer jueces, secretarios, abogados, letrados, funcionarios, firmantes, personas autorizadas para diligenciar, actores, acreedores, representantes, notificadores, destinatarios del oficio, empleados judiciales ni titulares de cuentas utilizadas exclusivamente para depositar fondos judiciales. Si el nombre del sujeto embargado no aparece en el fragmento, no inventar ni inferir un nombre.",
+    "dni": "DNI perteneciente exclusivamente a la misma persona física identificada como sujeto embargado, demandado, ejecutado o afectado directamente por la medida judicial. Extraerlo solamente cuando pueda vincularse claramente con esa persona. Puede aparecer con puntos, espacios, guiones o prefijos como DNI, D.N.I. o Documento Nacional de Identidad. No extraer DNI de jueces, abogados, secretarios, funcionarios, firmantes, autorizados, actores, acreedores, representantes ni otras personas mencionadas incidentalmente. Si no existe evidencia suficiente de que el DNI corresponde al sujeto embargado, no extraerlo.",
+    "cuit_cuil": "CUIT o CUIL perteneciente exclusivamente a la misma persona física o jurídica identificada como sujeto embargado, demandado, ejecutado o afectado directamente por la medida judicial. Extraerlo solamente cuando pueda vincularse claramente con esa persona. Puede aparecer con guiones, puntos, espacios o prefijos como CUIT, CUIL, C.U.I.T. o C.U.I.L. No extraer CUIT o CUIL del Poder Judicial, bancos, empresas destinatarias, abogados, funcionarios, acreedores, representantes ni otras personas ajenas al sujeto embargado. Si no existe evidencia suficiente de que el identificador corresponde al sujeto embargado, no extraerlo."
+  },
+  "threshold": 0.55,
+  "modo_entrada": "texto_completo",
+  "limit": null,
+  "splits": {
+    "train": [
+      {
+        "id": "536728",
+        "group": "80",
+        "text_hash": "e41e370080961bc53a6d0dbab89c9b465f3dfe63b32b9afa669e67754ab20eeb",
+        "expected": {
+          "nombre_embargado": "MONTIEL DARIO RUBEN",
+          "dni": "21.525.457",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538119",
+        "group": "18",
+        "text_hash": "7ac319e5c7b0caccb7bbfe85c1c1ad38f8676e85613d3628051897b8b5389ed0",
+        "expected": {
+          "nombre_embargado": "NORMA ESTEFANIA MIHANOVICH",
+          "dni": "44.398.455",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "522290",
+        "group": "45",
+        "text_hash": "159f8937d51e98d3f9dc78fed0bec337539372d4cebb5fcd390886da90a978fc",
+        "expected": {
+          "nombre_embargado": "GRACIELA EDITH CANO",
+          "dni": "18.347.843",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536730",
+        "group": "56",
+        "text_hash": "613c6b5da6c33652e8a90e1464ada246d8872b8b602bc69e625819eff456ec7f",
+        "expected": {
+          "nombre_embargado": "ROMERO GABRIEL GUSTAVO",
+          "dni": "25.925.481",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "525055",
+        "group": "35",
+        "text_hash": "98f9f2bf216cb24e6880cc8833dd03a22ebf5cb7ced1e063e440f725cf5919b5",
+        "expected": {
+          "nombre_embargado": "CABRERA VASQUEZ, BENITO | ELVER BRUNO ESTRADA QUINTO",
+          "dni": "94.310.138 | 94.635.112",
+          "cuit_cuil": " | "
+        }
+      },
+      {
+        "id": "536750",
+        "group": "31",
+        "text_hash": "835a58e6af9b0eb0b967500ab66dc68114313ff2bad31e3f060f739a6637e888",
+        "expected": {
+          "nombre_embargado": "BOTTI.\nFEDERICO MARIO",
+          "dni": "29.987.246",
+          "cuit_cuil": "20299872468"
+        }
+      },
+      {
+        "id": "501201",
+        "group": "46",
+        "text_hash": "e937df5cf58c12c9c0b1043dec1a60a7046e7a21f8ff1588c475f33ab75f47b4",
+        "expected": {
+          "nombre_embargado": "Claudia Marcela Ledo",
+          "dni": "24.535.698",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536721",
+        "group": "14",
+        "text_hash": "e46f3bd46e3a2d32bccf4ef280a05e4890d95d166aa30a0b895222933dcdee60",
+        "expected": {
+          "nombre_embargado": "MIGUEL MARCELO MEDINA",
+          "dni": "16269506",
+          "cuit_cuil": "20162695082"
+        }
+      },
+      {
+        "id": "538066",
+        "group": "76",
+        "text_hash": "32feba66085e5503b8acf8aaba1a0d9c17ab68d22b5b99632af3aaa561d92678",
+        "expected": {
+          "nombre_embargado": "Clara Evangelina Torres",
+          "dni": "23492823",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "535814",
+        "group": "24",
+        "text_hash": "07d2876bdb20be383cc3e0b553bfcb26bf3089b8cc7a13ee75ed570fc9fb4500",
+        "expected": {
+          "nombre_embargado": "Nancy Mariela\nBenedetti",
+          "dni": "25.688.264",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "513482",
+        "group": "79",
+        "text_hash": "8af30cdf4b91c25452377c537d95f455f5003083bc7fdf981aa11489f402a132",
+        "expected": {
+          "nombre_embargado": "AGUSTIN MARIANO PEROSIO | Sonia Raquel Bobadilla",
+          "dni": "16.893.287 | ",
+          "cuit_cuil": "20-16893287-2 | 23-14564727-4"
+        }
+      },
+      {
+        "id": "543631",
+        "group": "64",
+        "text_hash": "170a7379c56656ba390d321e584cef4cd34dc19fe9bc4729d7f573e706b56f76",
+        "expected": {
+          "nombre_embargado": "GONZALEZ LEDESMA MAURICIO",
+          "dni": "35.646.104",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538084",
+        "group": "2",
+        "text_hash": "daa89a73c957af9e148891a2021f5bc7f995e6ebe6d59af767929dbb047df461",
+        "expected": {
+          "nombre_embargado": "MAZA ARIAS MERCEDES FATIMA",
+          "dni": "32.630.518",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "534526",
+        "group": "4",
+        "text_hash": "6e3bee3308bfd92dd95d4536ace0c58dabb828bfddbe823cbf85b19a82198236",
+        "expected": {
+          "nombre_embargado": "BRAVO LUIS ALBERTO",
+          "dni": "40770662",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536705",
+        "group": "20",
+        "text_hash": "30391c08f4770728ad61139d4006689642f3a970dbfbe26aeab7d5a6b3171006",
+        "expected": {
+          "nombre_embargado": "CARLOS ROBERTO SOLOHAGA",
+          "dni": "17.516.617",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538118",
+        "group": "1",
+        "text_hash": "205299cca58c64375d112cd0f5a5778a98c2c571a6fb50bbe6b2ad1eed47b6d2",
+        "expected": {
+          "nombre_embargado": "NAHUEL OSCAR MARQUEZ",
+          "dni": "33.470.065",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "523990",
+        "group": "65",
+        "text_hash": "b977adcb0b85b51d1f583abde1f2d3e80d429fa8908e082f6972f8499327ed61",
+        "expected": {
+          "nombre_embargado": "ALEJANDRO RODRIGO ALBO",
+          "dni": "20.583.561",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538037",
+        "group": "47",
+        "text_hash": "dcd9bc28c71d0e672a49c46936aefc1352541c8f835bcfd007b7392292a507f8",
+        "expected": {
+          "nombre_embargado": "GRISELDA BEATRIZ VALENZUELA",
+          "dni": "24.326.675",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "547369",
+        "group": "72",
+        "text_hash": "008e1e3d85073b659b14cb704669a239e177be8d93fbc5312d1509dc268c01f9",
+        "expected": {
+          "nombre_embargado": "GÓMEZ, CLAUDIO LEONARDO",
+          "dni": "33.627.258",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "494160",
+        "group": "33",
+        "text_hash": "928b0f09c73754775210246c8289071777d5a0adc59755c890d7168f38dc48ae",
+        "expected": {
+          "nombre_embargado": "ROBERTO GABRIEL SZILAK | GARCIA PALACIOS MARCELA PATRICIA",
+          "dni": "24678126 | 93757465",
+          "cuit_cuil": "20-24678126-6 | 27-93757465-2"
+        }
+      },
+      {
+        "id": "546314",
+        "group": "11",
+        "text_hash": "e37f5dc850134f2fdeb94db026b76a9aabc76ea1f22991f742ef1a5e54fd0359",
+        "expected": {
+          "nombre_embargado": "SILVA HERMINIO ISAUL ANTONIO",
+          "dni": "31973182",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536741",
+        "group": "9",
+        "text_hash": "f34604cff53da31be9ad338db49293d241ca54a98d6b5e421ece93edc3b70051",
+        "expected": {
+          "nombre_embargado": "ROBERTO CARLOS LOBO",
+          "dni": "21773000",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "514558",
+        "group": "32",
+        "text_hash": "372477337416a2cbe30f7f7334ef9fc0b2065cd3e2f3cf7273e6d7c72efb64ce",
+        "expected": {
+          "nombre_embargado": "Gustavo Ezequiel Godoy",
+          "dni": "31.317.421",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "542996",
+        "group": "5",
+        "text_hash": "cea7ba2a3ecad300ef94f24890f131a6cea897f20c4e4242fc641480db36c1ae",
+        "expected": {
+          "nombre_embargado": "STIO MARIA AMELIA",
+          "dni": "6.551.699",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "516901",
+        "group": "60",
+        "text_hash": "25e4279de49229dee22e26f619511d34a6cce08f3c7e763c1089252e745e6145",
+        "expected": {
+          "nombre_embargado": "Daniel Ezequiel Romero",
+          "dni": "29.225.672",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "516903",
+        "group": "27",
+        "text_hash": "fb6cdb61f2160abfdc79e33476d4b24ea519ea3275d4277f770f2f72b8404fec",
+        "expected": {
+          "nombre_embargado": "FERNANDO MARTIN GONZALEZ",
+          "dni": "27680733",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536707",
+        "group": "74",
+        "text_hash": "70240768d2d1a85220d3f5eaf3f0912762827d1c7ee7d2e08ceb8d15ba065697",
+        "expected": {
+          "nombre_embargado": "JUAN CARLOS SEQUERA",
+          "dni": "4.513.281",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536724",
+        "group": "58",
+        "text_hash": "edc43946999ad8abfced00a47908c6ad6cc662f14e0d7d1625c63fbb5b0b9a6f",
+        "expected": {
+          "nombre_embargado": "HORACIO OSCAR MONTENEGRO",
+          "dni": "23.420.002",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "529783",
+        "group": "34",
+        "text_hash": "9c33c168ef9d796fd202abbc92db3bf25d1b57dd03678b9cbaea2bebf7c2b415",
+        "expected": {
+          "nombre_embargado": "ALFREDO ANTONIO ARIAS",
+          "dni": "10.700.496",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538114",
+        "group": "48",
+        "text_hash": "2773b2a6791862d6e2f5ef59612cd83265fda997469d6637fdf1edce5ad6a627",
+        "expected": {
+          "nombre_embargado": "ANGEL EZEQUIEL ALARCON",
+          "dni": "44.583.812",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "529383",
+        "group": "12",
+        "text_hash": "5778aaee2dd8d4d9d96079296b961f3bd1050c9fac3e846f200d03732765b142",
+        "expected": {
+          "nombre_embargado": "Orozco Ernesto Ariel",
+          "dni": "34418062",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "498352",
+        "group": "69",
+        "text_hash": "bca502a410f0d57025b3351e5b1b7e7502a0571f8f857f14acbbd827208ee5b5",
+        "expected": {
+          "nombre_embargado": "José Enniliano ALVAREZ",
+          "dni": "40.209.549",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538120",
+        "group": "28",
+        "text_hash": "68156b36b1a731667594d99cffc1d64dbfdbee5c3befd7d5f7a0606d3144e403",
+        "expected": {
+          "nombre_embargado": "NATALIA ANDREA ONA",
+          "dni": "26.294.008",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "495011",
+        "group": "3",
+        "text_hash": "5cad58a6dfba916653808ade4ec8ad530728c656d989ab80f11685c034364298",
+        "expected": {
+          "nombre_embargado": "VINCI BRIAN EMMANUEL",
+          "dni": "34.436.998",
+          "cuit_cuil": "2034436 99315"
+        }
+      },
+      {
+        "id": "513487",
+        "group": "66",
+        "text_hash": "25fa259596c7b086b2cdf25e6f4a144e20d9774bf3dc24ca94db27aaf2edb239",
+        "expected": {
+          "nombre_embargado": "AGUSTIN MARIANO PEROSIO",
+          "dni": "16.893.287",
+          "cuit_cuil": "20-16893287-2"
+        }
+      },
+      {
+        "id": "531094",
+        "group": "71",
+        "text_hash": "35a4001bff35c6d803acbb5614a402a3d3d7a66a80fed2b6187fe71ebe75f8a1",
+        "expected": {
+          "nombre_embargado": "RIO URUGUAY COOPERATIVA DE SEGUROS LIMITAI)A",
+          "dni": "",
+          "cuit_cuil": "30500061711"
+        }
+      },
+      {
+        "id": "518796",
+        "group": "25",
+        "text_hash": "d8e77a76cf0483e96383bff1cb5726a59950e2ebe5b347e24e7b24a8ba5e92ff",
+        "expected": {
+          "nombre_embargado": "CHARIANO LEONARDO GABRIE",
+          "dni": "28.731.512",
+          "cuit_cuil": "20428 31512-1"
+        }
+      },
+      {
+        "id": "535837",
+        "group": "52",
+        "text_hash": "68ca1b348dde0b4f874e79864ba621a9a47f31eb0c166f2e70a4ba7b18e2afe9",
+        "expected": {
+          "nombre_embargado": "LUNA HORACIO EMANUEL",
+          "dni": "35499690",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "523977",
+        "group": "63",
+        "text_hash": "841584d8cebd02fab712743cdc2813cf17556a948319d2d27de5fbe9c473400d",
+        "expected": {
+          "nombre_embargado": "EDUARDO JAVIER FERNAN",
+          "dni": "21.594.165",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "495686",
+        "group": "54",
+        "text_hash": "ce362c388f0265d25e92c813dab17bdffaa65ac1d9b95bf7ca430ef09d234792",
+        "expected": {
+          "nombre_embargado": "MACIEL FERNANDO OSCAR",
+          "dni": "27.825.597",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "495690",
+        "group": "55",
+        "text_hash": "60ebdcc45b9fe69c4914b53ac80a7e4a30a62d309f7f5efd78c7644487cde3dc",
+        "expected": {
+          "nombre_embargado": "SOTO JUAN RAMON",
+          "dni": "34.300.506",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538090",
+        "group": "42",
+        "text_hash": "94e87054bbce6aa4f05b3a6739b23701840fa7678a32bed1ba63ea9020f64798",
+        "expected": {
+          "nombre_embargado": "MIRIAM LOPEZ FRANCO",
+          "dni": "94,542,024",
+          "cuit_cuil": "27-94542024-9"
+        }
+      },
+      {
+        "id": "546332",
+        "group": "17",
+        "text_hash": "ef4f93179d87eccb068dd816fbd88598d4a9df762b9312f04e00e6120c7e202b",
+        "expected": {
+          "nombre_embargado": "VALERIA ALEJANDRA JIMENEZ",
+          "dni": "29231660",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "501211",
+        "group": "36",
+        "text_hash": "c9a53090a3908867b2b52b0ef6f15909c754731876e4077d3baeec0cc632a881",
+        "expected": {
+          "nombre_embargado": "PEDRAZA TEODORO ROVEL",
+          "dni": "20.276.462",
+          "cuit_cuil": "20-20276462-3"
+        }
+      },
+      {
+        "id": "536739",
+        "group": "77",
+        "text_hash": "a580b7a5f07d526319b991689e267a033591310cf9cb408c4a4030957808478c",
+        "expected": {
+          "nombre_embargado": "PAULA ALEJANDRA PILARIA",
+          "dni": "21.594.889",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "516904",
+        "group": "15",
+        "text_hash": "e5f6373993dc362a0b13a4b886daa17a7e460a8b829a3f170323aaf7013a3f05",
+        "expected": {
+          "nombre_embargado": "FERNANDEZ Laura Estela",
+          "dni": "20.371.813",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "538122",
+        "group": "13",
+        "text_hash": "1da8ac960a78582dacec33ab9f7bdf16d4500cfa66d7d43466f8597668e84f9f",
+        "expected": {
+          "nombre_embargado": "CLAUDIA ALEJANDRA MIRANDA",
+          "dni": "23.360.827",
+          "cuit_cuil": ""
+        }
+      }
+    ],
+    "validation": [
+      {
+        "id": "538081",
+        "group": "6",
+        "text_hash": "c25dc54aec8fedf0ebce73dab31f0e05ad432b05b5bf6d14707d5bfe22b52731",
+        "expected": {
+          "nombre_embargado": "BIERNVERT CLAUDIA CARINA",
+          "dni": "27.164.468",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "501696",
+        "group": "19",
+        "text_hash": "5b69429f9e7bac20925621711f87fd81f367f403bc66ee2c4dfae890706c5ae6",
+        "expected": {
+          "nombre_embargado": "SANTIAGO NICOLAS GONZALEZ",
+          "dni": "39.872.112",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536725",
+        "group": "8",
+        "text_hash": "05052fe003803e49d58710b6b89c4955b906d0e95da0a4688c41e78a3695bc57",
+        "expected": {
+          "nombre_embargado": "MIGUEL ANGEL SEGOVIA",
+          "dni": "36003333",
+          "cuit_cuil": "20360033334"
+        }
+      },
+      {
+        "id": "494151",
+        "group": "38",
+        "text_hash": "600e9f12bf8f4f2854e9c0dc75438f6c5355a3159390ec9238009f954ad3c24b",
+        "expected": {
+          "nombre_embargado": "JOSÉ LUIS VALENTINI",
+          "dni": "17.196.196",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536738",
+        "group": "59",
+        "text_hash": "bf1e2cdb910b10639cf64cf8ba534e713b84abe282ecff7c08b612abb2790103",
+        "expected": {
+          "nombre_embargado": "LUCINDO RAMÓN CORNEJO",
+          "dni": "12.848.992",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "546334",
+        "group": "39",
+        "text_hash": "ce0a0e5105a135e8e64132e5663638d5a0ac9719afe5bc5b35cddbb654929955",
+        "expected": {
+          "nombre_embargado": "RAVI DESARROLLOS S.A",
+          "dni": "",
+          "cuit_cuil": "30.71438128-4"
+        }
+      },
+      {
+        "id": "532501",
+        "group": "29",
+        "text_hash": "b92fba09d9f58f69c9c164233425b353414582c8ee323387891fdb1fce9c4020",
+        "expected": {
+          "nombre_embargado": "ELIAS EZEQUIEL RODRIGUEZ",
+          "dni": "41.075.050",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "547366",
+        "group": "61",
+        "text_hash": "9fa56eec3fb583ffdbac15d72b6ea482d83b4fe4804207dc5eaf31a27e3f5991",
+        "expected": {
+          "nombre_embargado": "PAEZ, CARLA STEFANIA",
+          "dni": "33.414.252",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "547376",
+        "group": "67",
+        "text_hash": "c57872dc0e0efaba083a77f3379f4e2dba999b9d80830a8591af70afeb17efbf",
+        "expected": {
+          "nombre_embargado": "Favio Duarte Montania",
+          "dni": "",
+          "cuit_cuil": "20-94958329-6"
+        }
+      },
+      {
+        "id": "523996",
+        "group": "62",
+        "text_hash": "2a44175dd8fcd20000dc26de8547472f5309b15f5fad0ccbaf0c4a646600f869",
+        "expected": {
+          "nombre_embargado": "PUJADAS RUBEN ALBERTO",
+          "dni": "5.612.521",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "529847",
+        "group": "49",
+        "text_hash": "31da640fae15d2c8c5289750b06e64953a22a9457a32f97a067bf07d0f727315",
+        "expected": {
+          "nombre_embargado": "LIPSKER MATIAS ALEXIS",
+          "dni": "24.564.225",
+          "cuit_cuil": "20-24564225-4"
+        }
+      },
+      {
+        "id": "536715",
+        "group": "73",
+        "text_hash": "47d6a3b6a1ed3fdb365fc6ea602144182a97b752e0ab6a0f56def9f922adba8a",
+        "expected": {
+          "nombre_embargado": "ALFREDO ISMAEL LOPEZ",
+          "dni": "27015232",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "535845",
+        "group": "21",
+        "text_hash": "a2b74510ba5c53aa3f58d211449e3ab81460d45a30031afcf98288b79d8fbe50",
+        "expected": {
+          "nombre_embargado": "HORACIO OSCAR NUÑEZ | MIRTA EDITH BONACALZA | ELIAS CARBALLO",
+          "dni": "26592524 | 40797926 | 24846229",
+          "cuit_cuil": "20-26592524-4 | 20- 40797926-6 | 23-24846229-9"
+        }
+      },
+      {
+        "id": "536718",
+        "group": "22",
+        "text_hash": "b5b5d413f79149edb8fe98773405ee5bfbc333783b6e979ef0cb4e48d1d25d40",
+        "expected": {
+          "nombre_embargado": "GROSSO JUAN JOSE",
+          "dni": "14.748.434",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "503824",
+        "group": "30",
+        "text_hash": "674495870e089cf7ea3bfb77035599fa24882f6894113b04741747c613e28262",
+        "expected": {
+          "nombre_embargado": "JACQUET ROBERTO LUIS",
+          "dni": "20.258.157",
+          "cuit_cuil": "23-20258157-9"
+        }
+      },
+      {
+        "id": "547372",
+        "group": "75",
+        "text_hash": "eb962d53f9300a969d2102f014c198dc0481e575e4aa29b180f4c80a2fadfe2b",
+        "expected": {
+          "nombre_embargado": "LETTERUCCI, JOSE LUIS",
+          "dni": "29.312.586",
+          "cuit_cuil": ""
+        }
+      }
+    ],
+    "test": [
+      {
+        "id": "543609",
+        "group": "51",
+        "text_hash": "0a0755e3b00660ffeb2e83da8627fda51bdd3400adad9e3291e5c6b9ec52f63e",
+        "expected": {
+          "nombre_embargado": "CARDZO MIGUEL ÁNGEL",
+          "dni": "23087819",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "524057",
+        "group": "7",
+        "text_hash": "a84a40d9e75e39a7f064dd09f8fc9e6da758b69f66b6d9cf8f81c40170e009bc",
+        "expected": {
+          "nombre_embargado": "DIEGO FABIAN FRETES",
+          "dni": "29178884",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "524013",
+        "group": "68",
+        "text_hash": "b6bb7d2b9ef7a69f61e325625584de9ec51246fd6498800ddeff9dae5510fe59",
+        "expected": {
+          "nombre_embargado": "CISTERNA DIEGO",
+          "dni": "26.034.291",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "546238",
+        "group": "78",
+        "text_hash": "19e539df2bbc796bb83dd1143dc79c82bf914c10507ebd836e06752913063d90",
+        "expected": {
+          "nombre_embargado": "LOPEZ CARLOS PASCUAL",
+          "dni": "7.759.088",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "547373",
+        "group": "40",
+        "text_hash": "df2b031a69f7e30caf437ba4cc5f72871df61c804bdcd14283c53a1bc040cc1b",
+        "expected": {
+          "nombre_embargado": "JULIO Y OSCAR S.R.L, | OLARTE MALLOUI JULIO",
+          "dni": " | ",
+          "cuit_cuil": "30-71412954-2 | 20-93916854-1"
+        }
+      },
+      {
+        "id": "495683",
+        "group": "26",
+        "text_hash": "efe113f0a44b3a1961a40af90f263171e5fbee768efd93843559afeb58cb7d35",
+        "expected": {
+          "nombre_embargado": "ILLALBA JOSE ALBERTO",
+          "dni": "31.095.679",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "536742",
+        "group": "23",
+        "text_hash": "7673826db3e0eabd7ce9b9ac48dbb7abab255aa6df342345ca3993193ff05fa1",
+        "expected": {
+          "nombre_embargado": "ESTER JOAQUINA PRATS",
+          "dni": "10533729",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "503810",
+        "group": "53",
+        "text_hash": "68ef21f8eaa2b3a8a85641bff585a741753365e7362722bbe41553ab9e51f6a2",
+        "expected": {
+          "nombre_embargado": "HORACIO LUIS VACCHER",
+          "dni": "11.376.446",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "546236",
+        "group": "16",
+        "text_hash": "7cdeb6831c100273beeb22aa62d952d21c1e7cae2aa7cf5dfeecf4df0e5610e4",
+        "expected": {
+          "nombre_embargado": "AURELIO RODOLFO MELGAREJO",
+          "dni": "13273828",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "507931",
+        "group": "57",
+        "text_hash": "40038f1bd0c2aca6d572f7383765511ad6a564aa16fe94b7d8c89ac281f14a24",
+        "expected": {
+          "nombre_embargado": "Brusatin Nadia Vanesa",
+          "dni": "31.478.712",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "513551",
+        "group": "44",
+        "text_hash": "2ad2a5625c4f4cb99427bcad0efde4779185faf423f2fa87e9a2aa6b6150a53e",
+        "expected": {
+          "nombre_embargado": "HERRERA MAXIMILIANO FRANCISCO ALEXIS",
+          "dni": "36.301.174",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "524053",
+        "group": "10",
+        "text_hash": "252b692d89d70c7cfa83e994a247dadf12626a9ca538d04910472933eff55cd4",
+        "expected": {
+          "nombre_embargado": "HERR ANDREA JAQUÍ LINA",
+          "dni": "23.333.216",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "526651",
+        "group": "70",
+        "text_hash": "04b563347977dc8dd6f3898aa988acb131ac207d398b9c76176074b2016e7cd9",
+        "expected": {
+          "nombre_embargado": "PORCO MATRA GABRIELA",
+          "dni": "31.370.360",
+          "cuit_cuil": "27-31370360-1"
+        }
+      },
+      {
+        "id": "531075",
+        "group": "37",
+        "text_hash": "5d8f4d0d2f149b9ad0f4812becb2fc0954eb0c3f674f0f54334dd7bbc1e4a70d",
+        "expected": {
+          "nombre_embargado": "DANIEL CARLOS PEREZ",
+          "dni": "24391072",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "495014",
+        "group": "50",
+        "text_hash": "c2da3e91a89f5634f6ab65f21ff2c053691a9b897c5bb79639412ce18cb85b5f",
+        "expected": {
+          "nombre_embargado": "GRACIELA MONICA ZARZA",
+          "dni": "17711031",
+          "cuit_cuil": ""
+        }
+      },
+      {
+        "id": "507932",
+        "group": "41",
+        "text_hash": "1c1ec19777f814b1f7dd10d9064ad40106caebc517c5324afa6fb528b5c7b004",
+        "expected": {
+          "nombre_embargado": "SILVA IVAN ROBERTO y",
+          "dni": "27.31B.472",
+          "cuit_cuil": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+# ============================================================
+# DSPy + GEPA + GLiNER2
+# Optimización de descripciones para extracción de embargados
+# ============================================================
+
+# ------------------------------------------------------------
+# GLiNER2
+# ------------------------------------------------------------
+
+gliner:
+  # Modelo activo para la primera prueba:
+  modelo: "fastino/gliner2-multi-v1"
+
+  # Alternativa PII:
+  # modelo: "fastino/gliner2-privacy-filter-PII-multi"
+
+  device: "cpu"
+
+  threshold_inicial: 0.55
+
+  field_thresholds:
+    nombre_embargado: 0.60
+    dni: 0.50
+    cuit_cuil: 0.50
+
+  flat_ner: true
+  multi_label: false
+
+  chunk_words: 160
+  overlap_words: 40
+
+  local_files_only: false
+
+# ------------------------------------------------------------
+# LLM DEL PROGRAMA DSPy
+# ------------------------------------------------------------
+
+llm:
+  provider: "ollama_chat"
+
+  modelo: "llama3.2"
+
+  api_base: "http://localhost:11434"
+
+  temperature: 0.2
+
+  max_tokens: 1200
+
+  # Ollama local no necesita API key.
+  api_key_env: null
+
+# ------------------------------------------------------------
+# LLM DE REFLEXIÓN DE GEPA
+# ------------------------------------------------------------
+
+llm_reflexion:
+  provider: "ollama_chat"
+
+  modelo: "llama3.2"
+
+  api_base: "http://localhost:11434"
+
+  temperature: 0.3
+
+  max_tokens: 1600
+
+  api_key_env: null
+
+# ------------------------------------------------------------
+# GEPA
+# ------------------------------------------------------------
+
+gepa:
+  # Debe utilizarse exactamente uno de:
+  # - auto
+  # - max_full_evals
+  # - max_metric_calls
+
+  auto: null
+
+  max_full_evals: null
+
+  max_metric_calls: 20
+
+  # Una sola ejecución simultánea para controlar recursos.
+  num_threads: 1
+
+  seed: 42
+
+  candidate_selection_strategy: "pareto"
+
+  reflection_minibatch_size: 3
+
+  skip_perfect_score: true
+
+  log_dir: "output/gepa_logs"
+
+# ------------------------------------------------------------
+# DATOS
+# ------------------------------------------------------------
+
+datos:
+  # ----------------------------------------------------------
+  # MODO DE ENTRADA
+  # ----------------------------------------------------------
+  #
+  # Primera prueba:
+  # usar el texto completo de cada documento.
+  #
+  # Más adelante puede cambiarse a:
+  # modo_entrada: "fragmentos"
+
+  modo_entrada: "texto_completo"
+
+  # ----------------------------------------------------------
+  # GOLD SUPERVISADO
+  # ----------------------------------------------------------
+
+  gold:
+    ruta: "data/bd_supervisada_embargos_actualizada.csv"
+
+    columnas:
+      id: "id"
+      numero_archivo: "numero_archivo"
+      nombre_embargado: "embargado"
+      dni: "dni"
+      cuit_cuil: "cuit_cuil"
+
+  # ----------------------------------------------------------
+  # BASE PARA EXTRACCIÓN
+  # ----------------------------------------------------------
+  #
+  # Aunque usemos texto_completo, esta base sigue siendo
+  # fragmentos.csv porque contiene también la columna
+  # texto_completo.
+
+  extraccion:
+    ruta: "data/fragmentos.csv"
+
+    columnas:
+      id: "id"
+      numero_archivo: "numero_archivo"
+      fragmento: "fragmento"
+      texto_completo: "texto_completo"
+
+  # ----------------------------------------------------------
+  # TRAIN / VALIDATION / TEST
+  # ----------------------------------------------------------
+
+  split:
+    train: 0.60
+    validation: 0.20
+    test: 0.20
+
+  seed: 42
+
+# ------------------------------------------------------------
+# OPTIMIZACIÓN DEL THRESHOLD GLOBAL
+# ------------------------------------------------------------
+
+optimizacion:
+  # Después de elegir el schema,
+  # se puede buscar el mejor threshold global.
+  optimizar_threshold: true
+
+  threshold_min: 0.30
+
+  threshold_max: 0.70
+
+  threshold_paso: 0.05
+
+# ------------------------------------------------------------
+# RUTAS DEL PROYECTO
+# ------------------------------------------------------------
+
+rutas:
+  schema_inicial: "schemas/schema_inicial.json"
+
+  schema_optimizado: "schemas/schema_optimizado.json"
+
+  output: "output"

@@ -1,0 +1,5 @@
+{
+  "nombre_embargado": "Nombre y apellido de persona física o razón social embargada o demandada",
+  "dni": "Documento Nacional de Identidad de 7 u 8 dígitos del embargado",
+  "cuit_cuil": "Clave Única de Identificación Tributaria o Laboral del embargado con formato XX-XXXXXXXX-X o 11 dígitos"
+}
